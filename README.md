@@ -48,6 +48,11 @@ If you want to run it locally without docker you need to do as follows. <br>
     ```sh
     python3 manage.py runserver --settings=config.settings
     ```
+6. To run the tests and display a coverage report
+   ```sh
+   make test
+   ```
+   [Current State is 100% coverage](https://imgur.com/a/eXKSoXz)
 
 ## Questions Answers
 * What are some of the design decisions you made?
@@ -63,6 +68,8 @@ If you want to run it locally without docker you need to do as follows. <br>
     > Add more elaborate tests that test different vesting plans <br />
     > Maybe use a lighter framework such as NodeJS as it's a service that doesn't need alot<br />
 * What things are missing to make it production-ready?
+    > Add login functionality to enable the service to our users only
+    > Apply rate-limiting to the endpoint
     > More people to look at the approach and provide feedback
     > E2E testing and load testing to make sure it behaves as needed
     > Manually make sure all the supported vesting plans work as expected

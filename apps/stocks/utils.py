@@ -30,7 +30,7 @@ def get_last_price_for_share(company_valuations, share_date):
     """
     result = company_valuations[0]["price"]
     for valuation in company_valuations:
-        if valuation["valuation_date"] <= share_date:
+        if datetime.strptime(valuation["valuation_date"], '%d-%m-%Y').date() <= datetime.strptime(share_date, '%d-%m-%Y').date():
             result = valuation["price"]
     return result
 
