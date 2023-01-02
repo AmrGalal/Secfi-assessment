@@ -25,7 +25,7 @@ RUN pip install poetry==1.1.7 && \
 # copy poetry packages file
 COPY pyproject.toml ./
 RUN poetry install --no-interaction --no-ansi
-
+RUN pip3 install python-dateutil
 # Multistage build
 # 2. Changes from the backend files
 FROM base as final

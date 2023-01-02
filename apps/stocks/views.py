@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, mixins
 from rest_framework import status
 
-from . import serializers
+from . import serializers, utils
 
 
 class VestedEquityValueViewset(GenericViewSet):
@@ -11,4 +11,5 @@ class VestedEquityValueViewset(GenericViewSet):
     def list(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response({"data": "niceu endpoint"}, status=status.HTTP_200_OK)
+        response_data = utils.calculate_vested_equity_over_time(request.data)
+        return Response(response_data, status=status.HTTP_200_OK)
