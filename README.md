@@ -57,6 +57,7 @@ If you want to run it locally without docker you need to do as follows. <br>
 ## Questions Answers
 * What are some of the design decisions you made?
     > The task isn't big to have design decisions but I decided to go with Python/Django stack as it's the one am most familiar with.
+    > I also decided to go with task B as it's more challenging
 * What are some of the business decisions you made?
     > The description doesn't show a clear path to follow to calculate the monthly shares for each month. I decided that it has consistent increment every month and it either starts at first month or 13th month depending if we have cliff or not.<br />
     This means that on 13th month, we will always have 25% of shares and 100% of shares by the end of the period.
@@ -64,12 +65,14 @@ If you want to run it locally without docker you need to do as follows. <br>
     > About 4-5 hours split onto 2 days to understand the project and start it from scratch
 * What do you like about your implementation?
     > I believe it's simple, to the point and easy to understand given that you have context
+    > Has 100% coverage
 * What would you improve next time?
     > Add more elaborate tests that test different vesting plans <br />
-    > Maybe use a lighter framework such as NodeJS as it's a service that doesn't need alot<br />
+    > Maybe use a lighter framework such as NodeJS as this service is simple and doesn't need alot<br />
 * What things are missing to make it production-ready?
     > Add login functionality to enable the service to our users only
     > Apply rate-limiting to the endpoint
     > More people to look at the approach and provide feedback
+    > Try to limit the scope to only a set of plans since this is the realistic model
     > E2E testing and load testing to make sure it behaves as needed
     > Manually make sure all the supported vesting plans work as expected

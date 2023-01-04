@@ -10,6 +10,7 @@ def get_monthly_shares(start_date, duration_months, quantity, cliff_durations):
     monthly_increment = quantity/duration_months
     initial_value = 0
     response = []
+    
     while current_date <= last_date:
         entry = {
             "date": current_date.strftime('%d-%m-%Y'),
